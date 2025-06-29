@@ -2,7 +2,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-test-key'
+import os
+SECRET_KEY = os.environ.get("SECRET_KEY", "fallback-secret-key")
+
 DEBUG = True
 ALLOWED_HOSTS = []
 
